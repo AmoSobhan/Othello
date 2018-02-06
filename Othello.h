@@ -1,22 +1,39 @@
+//
+// Created by atenagm on 12/10/17.
+//
+
 #ifndef OTHELLO_H
 #define OTHELLO_H
 
-#include <QMainWindow>
 
-namespace Ui {
-class Othello;
-}
+#include <QtWidgets/qmainwindow.h>
+#include <QtWidgets/qpushbutton.h>
+#include <QtWidgets/qtextedit.h>
+#include <qgridlayout.h>
+#include <qlabel.h>
 
-class Othello : public QMainWindow
-{
+using namespace std;
+
+class Othello : public QMainWindow {
+
     Q_OBJECT
 
 public:
-    explicit Othello(QWidget *parent = 0);
+    Othello(QWidget * = 0);
     ~Othello();
 
+public slots:
+//    void openSecondWindow();
+
 private:
-    Ui::Othello *ui;
+    QPushButton *exit;
+    QPushButton *playerVsCpu;
+    QPushButton *playerVsplayer;
+    QLabel *image;
+    QLabel *gameName;
+    QGridLayout *menuLayout;
+
 };
 
-#endif // OTHELLO_H
+
+#endif //OTHELLO_H

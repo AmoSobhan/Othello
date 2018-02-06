@@ -1,11 +1,12 @@
-#include "othello.h"
+#include "Othello.h"
 #include <QApplication>
+
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    Othello w;
-    w.show();
+    QApplication othello(argc, argv);
+    Othello menu;
 
-    return a.exec();
+
+    return othello.exec();
 }

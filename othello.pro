@@ -12,9 +12,10 @@ TARGET = othello
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        othello.cpp
+SOURCES += main.cpp \
+    Othello.cpp
 
-HEADERS  += othello.h
+HEADERS  += \
+    Othello.h
 
 FORMS    += othello.ui
