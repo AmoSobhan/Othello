@@ -1,7 +1,3 @@
-//
-// Created by atenagm on 12/10/17.
-//
-
 #ifndef OTHELLO_H
 #define OTHELLO_H
 

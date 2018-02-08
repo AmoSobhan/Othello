@@ -3,11 +3,12 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QPixmap>
+#include <QRegion>
 
 Othello::Othello(QWidget *parent) : QMainWindow(parent)
 {
     this->setFixedSize(500, 500);
-    this->setStyleSheet("Background-color: black;");
+    this->setStyleSheet("Background-color: blue;");
 
     image = new QLabel("Othello",this);
     image->setGeometry(100,70,300,200);
@@ -41,6 +42,8 @@ Othello::Othello(QWidget *parent) : QMainWindow(parent)
     exit = new QPushButton("EXIT",this);
     exit->setGeometry(370,430,100,40);
     exit->setStyleSheet("Background-color: gray;");
+//    QRegion *region = new QRegion(*(new QRect(exit->x()+5,exit->y()+5,190,190)),QRegion::Ellipse);
+//    exit->setMask(*region);
     //set font
     QFont font1 = exit->font();
     font1.setPointSize(14);

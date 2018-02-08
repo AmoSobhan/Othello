@@ -13,9 +13,13 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    Othello.cpp
+    Othello.cpp \
+    square.cpp \
+    mainwindow.cpp
 
 HEADERS  += \
-    Othello.h
+    Othello.h \
+    square.h \
+    mainwindow.h
 
 FORMS    += othello.ui
