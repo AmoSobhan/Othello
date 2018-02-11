@@ -8,21 +8,21 @@
 Othello::Othello(QWidget *parent) : QMainWindow(parent)
 {
     this->setFixedSize(500, 500);
-    this->setStyleSheet("Background-color: blue;");
+    this->setStyleSheet("Background-color: black;");
 
     image = new QLabel("Othello",this);
     image->setGeometry(100,70,300,200);
     QPixmap pic("C:/Users/lenovo/Desktop/othello.jpg");
     this->image->setPixmap(pic);
 
-    gameName = new QLabel("Well Come", this);
+    gameName = new QLabel("Welcome", this);
     //set font
     QFont font = gameName->font();
     font.setPointSize(28);
     gameName->setFont(font);
-    gameName->setGeometry(160,10,250,40);
+    gameName->setGeometry(0, 0, 480, 40);
     gameName->setStyleSheet("color: white;");
-
+    gameName->setAlignment(Qt::AlignCenter);
 
     //set font
     QFont font2;
@@ -68,6 +68,4 @@ Othello::~Othello()
     delete image;
     delete gameName;
 }
-
-//Othello::openSecondWindow()
 

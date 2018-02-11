@@ -85,6 +85,19 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     this->show();
 }
 
+MainWindow::~MainWindow()
+{
+
+    delete nuts[8][8];
+    delete btns;
+    delete exit;
+    delete newGame;
+    delete playerName;
+    delete cpuName;
+    delete playerValue;
+    delete cpuValue;
+}
+
 void MainWindow::paintEvent(QPaintEvent *e)
 {
     QPainter p;

@@ -1,15 +1,19 @@
 #include "Othello.h"
-#include <QApplication>
 #include "mainwindow.h"
-#include "resaultwindow.h"
+#include "resultwindow.h"
+#include <QApplication>
+#include <QGraphicsEllipseItem>
+#include <QPaintEvent>
 #include <QtGui>
+#include <QRectF>
+
 
 int main(int argc, char *argv[])
 {
     QApplication othello(argc, argv);
-    Othello menu;
+//    Othello menu;
 //    MainWindow board;
-//    ResaultWindow result;
+    ResultWindow result;
 
     return othello.exec();
 }

@@ -13,6 +13,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
 
 private:
     QPushButton *nuts[8][8];
@@ -23,13 +24,13 @@ private:
     QLabel *cpuName;
     QLabel *playerValue;
     QLabel *cpuValue;
-//    void openMenu();
 protected:
     void paintEvent(QPaintEvent * e);
 
 //signals:
 
 //public slots:
+//    void openMenu();
 };
 
 #endif // MAINWINDOW_H
