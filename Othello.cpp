@@ -39,12 +39,10 @@ Othello::Othello(QWidget *parent) : QMainWindow(parent)
     playerVsplayer->setStyleSheet("Background-color: gray;");
     playerVsplayer->setFont(font2);
 
-    exit = new QPushButton("EXIT",this);
+    exit = new QPushButton("Exit",this);
     exit->setGeometry(370,430,100,40);
     exit->setStyleSheet("Background-color: gray;");
-//    QRegion *region = new QRegion(*(new QRect(exit->x()+5,exit->y()+5,190,190)),QRegion::Ellipse);
-//    exit->setMask(*region);
-    //set font
+
     QFont font1 = exit->font();
     font1.setPointSize(14);
     font1.setBold(false);
@@ -64,6 +62,11 @@ Othello::~Othello()
 //    disconnect(send, SIGNAL(clicked()), this, SLOT(sayWelcome()));
     disconnect(exit, SIGNAL(clicked()), QCoreApplication::instance(), SLOT(quit()));
 
+    delete exit;
+    delete playerVsCpu;
+    delete playerVsplayer;
+    delete image;
+    delete gameName;
 }
 
 //Othello::openSecondWindow()

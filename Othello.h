@@ -19,7 +19,6 @@ public:
     ~Othello();
 
 public slots:
-//    void openSecondWindow();
 
 private:
     QPushButton *exit;
@@ -27,8 +26,7 @@ private:
     QPushButton *playerVsplayer;
     QLabel *image;
     QLabel *gameName;
-    QGridLayout *menuLayout;
-
+//    void openSecondWindow();
 };
 
 
