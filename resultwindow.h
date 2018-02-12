@@ -1,9 +1,14 @@
 #ifndef RESULTWINDOW_H
 #define RESULTWINDOW_H
 
+#include "Othello.h"
+
 #include <QLabel>
 #include <QMainWindow>
+#include <QCoreApplication>
 #include <QPushButton>
+
+class Othello;
 
 class ResultWindow : public QMainWindow
 {
@@ -16,10 +21,12 @@ private:
     QPushButton *newGame;
     QPushButton *exit;
     QLabel *result;
+    Othello *menuR;
 
 signals:
 
 public slots:
+    void openMenuR();
 
 };
 

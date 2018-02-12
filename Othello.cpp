@@ -51,7 +51,7 @@ Othello::Othello(QWidget *parent) : QMainWindow(parent)
     this->setWindowTitle("Othello");
     this->setVisible(true);
 
-//    connect(playerVsCpu, SIGNAL(clicked()), this, SLOT(openSecondWindow());
+    connect(playerVsCpu, SIGNAL(clicked()), this, SLOT(openSecondWindow()));
     connect(exit, SIGNAL(clicked()), QCoreApplication::instance(), SLOT(quit()));
 
 
@@ -59,7 +59,7 @@ Othello::Othello(QWidget *parent) : QMainWindow(parent)
 
 Othello::~Othello()
 {
-//    disconnect(send, SIGNAL(clicked()), this, SLOT(sayWelcome()));
+    disconnect(playerVsCpu, SIGNAL(clicked()), this, SLOT(openSecondWindow()));
     disconnect(exit, SIGNAL(clicked()), QCoreApplication::instance(), SLOT(quit()));
 
     delete exit;
@@ -67,5 +67,11 @@ Othello::~Othello()
     delete playerVsplayer;
     delete image;
     delete gameName;
+}
+
+void Othello::openSecondWindow()
+{
+    board = new MainWindow();  //be carefule about memory leakage not in this class.
+    this->close();
 }
 

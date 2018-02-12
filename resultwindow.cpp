@@ -1,4 +1,6 @@
 #include "resultwindow.h"
+#include "Othello.h"
+#include <QCoreApplication>
 
 ResultWindow::ResultWindow(QWidget *parent) : QMainWindow(parent)
 {
@@ -24,20 +26,32 @@ ResultWindow::ResultWindow(QWidget *parent) : QMainWindow(parent)
     newGame->setStyleSheet("Background-color: gray;");
     newGame->setFont(font1);
     newGame->show();
+    connect(newGame, SIGNAL(clicked()), this, SLOT(openMenuR()));
+
 
     exit = new QPushButton("Exit", this);
     exit->setGeometry(360,560,100,30);
     exit->setStyleSheet("Background-color: gray;");
     exit->setFont(font1);
     exit->show();
+    connect(exit, SIGNAL(clicked()), QCoreApplication::instance(), SLOT(quit()));
 
     this->show();
 }
 
 ResultWindow::~ResultWindow()
 {
+    disconnect(newGame, SIGNAL(clicked()), this, SLOT(openMenuR()));
+    disconnect(exit, SIGNAL(clicked()), QCoreApplication::instance(), SLOT(quit()));
+
     delete newGame;
     delete exit;
     delete result;
+}
+
+void ResultWindow::openMenuR()
+{
+    menuR = new Othello();
+    this->close();
 }
 

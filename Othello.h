@@ -2,15 +2,22 @@
 #define OTHELLO_H
 
 
+#include "mainwindow.h"
+#include "resultwindow.h"
+
 #include <QtWidgets/qmainwindow.h>
 #include <QtWidgets/qpushbutton.h>
 #include <QtWidgets/qtextedit.h>
 #include <qgridlayout.h>
 #include <qlabel.h>
 
+class MainWindow;
+class ResultWindow;
+
 using namespace std;
 
-class Othello : public QMainWindow {
+class Othello : public QMainWindow
+{
 
     Q_OBJECT
 
@@ -19,7 +26,7 @@ public:
     ~Othello();
 
 public slots:
-//    void openSecondWindow();
+    void openSecondWindow();
 
 private:
     QPushButton *exit;
@@ -27,6 +34,7 @@ private:
     QPushButton *playerVsplayer;
     QLabel *image;
     QLabel *gameName;
+    MainWindow *board;
 };
 
 
